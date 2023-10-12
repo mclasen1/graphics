@@ -1,0 +1,269 @@
+/*
+This is a good layout for a mobile-first CSS template.
+Following this flow will minimize the number of styles you need to write and will ensure you are thinking, designing and developing mobile-first.
+Most of your styles get written like standard CSS, but for your mobile presentation. Generally speaking, a good mobile presention will stretch out nicely for larger screens.
+
+Sometimes, when we stretch out to larger screens, we need to make minor tweaks for the larger devices -- you can make these tweaks in the tablet media query, or if the issue exists on desktop only, the desktop media query.
+You will find this is far easier than the opposite task of using CSS to cram your desktop experience into a mobile device.
+*/
+/*********************************************************************
+ LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
+*********************************************************************/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+/*********************************************************************
+  YOUR MOBILE/BASE STYLES GO HERE
+*********************************************************************/
+/* This is what is called a reset. Different browsers have different default padding and margins. Using the * reserts all depault elements to have zero padding and margin. */
+
+/* (do I need this code????) 
+
+* {
+    box-sizing: border-box;
+}*/
+
+
+/*ALL DIV CLASSES IN HTML THAT CAN BE CALLED BACK IN CSS*/
+
+/*
+Headline, byline, dek: div class="container" -->.container
+hurricane photo: div class="photo" -->.photo
+2 paragraph intro: div class="text-box" -->.text-box
+4 icons in total: div class="icongroup" -->.icongroup
+flexbox with 4 icons: div class="flex" -->.flex
+icon 1 + text + header: div class="icon01" -->.icon01
+icon 2 + text + header: div class="icon02" -->.icon02
+icon 3 + text + header: div class="icon03" -->.icon03
+icon 4 + text + header: div class="icon04" -->.icon04
+source list: div class="references" --> .references
+*/
+
+
+*{
+    box-sizing: border-box;
+}
+body,
+html {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
+    font-size: 16px;
+}
+/*changes font for every piece of text on the page*/
+body {
+    font-family: monospace;
+}
+
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: center ;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+/*    border: 2px solid black;*/
+    text-align: block;
+}
+
+h2 {
+    font-size: 1em;
+    display: center;
+    position: relative;
+    top: -0.5em;
+/*    border: 2px solid black;*/
+    text-align: block;
+    line-height:20px;
+   
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 300px;
+/* border: 2px solid black;*/
+    text-align: block;
+    line-height:5px;
+    color: darkgreen;
+
+   
+}
+
+/*icon titles*/
+h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+/*    border: 2px solid black;*/
+    text-align: center;
+/*    background color: #f1ffe8;*/
+}
+
+mark{
+    background-color: #c1f0ad;
+    color:black;
+}
+.container {
+    width: 100%;
+    padding: 5px;
+    /* Added a max-width so that this one style block works on all devices */
+    max-width: 900px;
+    /* Margin to center the container when it's not the full width */
+    margin: auto;
+    display: block;
+    text-align: left;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+   /* margin-left: 50px;
+    margin-right:10px;*/
+/*  border: 2px solid black;*/*/
+
+
+   }
+
+   h5{
+    font-size: 1em;
+    text-align:left;
+/*    border: 2px solid black;*/
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+   }
+
+hr{
+    width: 92%;
+}
+/*
+ * Cleaned up figure styles so that you had better control over image sizing throughout the page
+ */
+
+figure {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+figcaption {
+    font-size: 0.90em;
+    padding: 8px;
+    text-align: left;
+/*    border: 2px solid black;*/
+/*    line-height: 1em;*/
+    display: block;
+    margin:auto;
+
+}
+/* Adds responsiveness to all images */
+.main_img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+.sub-img {
+    display: flex;
+    max-height: 200px ;
+    max-width: 200px;
+}*/
+
+/*USING THE .ELEMENT FORMAT TO SELECT A SPECIFIC ELEMENT CLASS -- EVERY ELEMENT IN THIS CLASS WILL BE AFFECTED!*/
+/*Only affects top part (headline)*/
+
+.text-box{
+/* s*/
+display: block;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-left: 10px;
+margin-right: 10px;
+padding: 5px;
+}
+
+.icon-caption{
+    border: 2px dotted;
+    border-color: #c1f0ad;
+    display: block;
+    margin: auto;
+    padding:5px;
+    background-color: #e6f5fa;
+}
+/*the div that holds all 4 icons */
+.icongroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+/*    border: 2px solid blue;*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    border: 2px dotted black;
+    width: 460px;
+    height:560px;
+    margin: 10px; 
+    padding: 10px;
+/*    max-width: 800px;*/
+/*    background-color: #f7f3d2;*/
+
+}
+
+.icon img{
+    max-width: 170px;
+    max-height: 170px;
+    diplay: block;
+    margin-left: auto;
+    margin-right: auto;
+    ;
+
+}
+
+.references{
+/*border: 2px solid black;*/
+margin: auto;
+display: block;
+padding: 5px;
+margin-left:10px;
+margin-right:10px;
+font-size:;
+}
+
+
+.credit {
+    color: gray;
+}
+/*********************************************************************
+  YOUR TABLET/DESKTOP STYLES GO HERE
+*********************************************************************/
+@media(min-width: 681px) {
+
+    /* Any adjustments for tablets and larger go here.
+    Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
+    /* Since you seem to want the flex elements to stack as normal on mobile, I just didn't define the flex
+     * styles until tablet. Less code that way
+   
+    }
+
+        /* Flex box styles go on the flex box element */
+    /*    display: grid;
+        grid-template-columns:repeat(4,1fr);
+        grid-gap: 10px;
+        width:960px;*/
+        
+    
+
+
+
+   
+
+/*********************************************************************
+  YOUR DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 780px) {
+
+/*    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 729px or larger -- so desktop */
+    
